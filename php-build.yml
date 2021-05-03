@@ -1,2 +1,12 @@
-root:
-  app
+folder:
+  include:
+    - app
+  ignore:
+    - assets
+
+file:
+  include:
+    - index.php
+  ignore:
+    - "*.zip"
+    - "*.scss"

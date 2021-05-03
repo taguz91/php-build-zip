@@ -52,9 +52,9 @@ class ConsoleApp
             $filePath = $file->getRealPath();
 
             if (is_dir($filePath)) {
-                $this->writer->error("Ignore empty dir: {$filename}");
+                $this->writer->warning("Ignore empty dir: {$filename}");
             } else if (file_exists($filePath)) {
-                $this->writer->print("Real file path:     {$filePath}");
+                if ($this->config->ignoreFile($filePath)) continue;
                 $relativePath = substr($filename, strlen($folder) + 1);
                 $zip->addFile($filePath, $relativePath);
             } else {
