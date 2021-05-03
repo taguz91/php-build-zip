@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * bootstrap file for console build
+ */
+
+use taguz91\PhpBuild\ConsoleApp;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$app = new ConsoleApp();
+
+if (PHP_SAPI !== 'cli') {
+    $app->writer->print('Run with cli pls');
+    exit(1);
+}
+
+$status = $app->run($argv ?? []);
+exit($status);

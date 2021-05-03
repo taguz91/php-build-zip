@@ -1,0 +1,24 @@
+{
+    "name": "taguz91/php-build-zip",
+    "description": "Project for build a zip",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Johnny Garcia",
+            "email": "jhonnygar98@hotmail.com"
+        }
+    ],
+    "bin": [
+        "build-zip"
+    ],
+    "autoload": {
+        "psr-4": {
+            "taguz91\\PhpBuild\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/yaml": "^5.2"
+    }
+}
